@@ -8,7 +8,8 @@
     <p>Ingresa un número decimal:</p>
     <input type="number" id="decimalInput" placeholder="Ingrese un número decimal">
     <button onclick="convertirDecimalABinario()">Convertir</button>
-    <p>Resultado en binario: <span id="resultadoBinario"></span></p>
+    <p>Resultado en binario:</p>
+    <input type="text" id="resultadoBinario" readonly>
 
     <script>
         function convertirDecimalABinario() {
@@ -19,9 +20,9 @@
             if (!isNaN(decimalInput)) {
                 // Convertir el número decimal a binario
                 var binario = (decimalInput >>> 0).toString(2);
-                resultadoBinario.textContent = binario;
+                resultadoBinario.value = binario;
             } else {
-                resultadoBinario.textContent = "Ingrese un número válido.";
+                resultadoBinario.value = "Ingrese un número válido.";
             }
         }
     </script>
