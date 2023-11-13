@@ -188,7 +188,54 @@
     </p>
 </form>
 
+<button onclick="verificarRespuestas()">Verificar respuestas</button>
 
+<div id="resultados"></div>
+
+<script>
+    function verificarRespuestas() {
+        var respuestas = [
+            "2", // Respuesta pregunta 1
+            "7C1", // Respuesta pregunta 2
+            "10111101111", // Respuesta pregunta 3
+            "2", // Respuesta pregunta 4
+            "Gottfried Wilhelm Leibniz" // Respuesta pregunta 5
+        ];
+
+        var resultadoHTML = "<h2>Resultados:</h2>";
+
+        var respuestasElegidas = [];
+        var puntaje = 0;
+
+        // Verificación de respuestas
+        for (var i = 1; i <= 5; i++) {
+            var radios = document.getElementsByName("question" + i);
+            for (var j = 0; j < radios.length; j++) {
+                if (radios[j].checked) {
+                    respuestasElegidas.push(radios[j].value);
+                    if (radios[j].value === respuestas[i - 1]) {
+                        puntaje++;
+                    }
+                }
+            }
+        }
+
+        // Mostrar resultados
+        resultadoHTML += "<p>Puntaje: " + puntaje + "/5</p><h3>Respuestas:</h3>";
+
+        for (var k = 0; k < respuestasElegidas.length; k++) {
+            if (respuestasElegidas[k] === respuestas[k]) {
+                resultadoHTML += "<p style='color: green'>Pregunta " + (k + 1) + ": Correcta</p>";
+            } else {
+                resultadoHTML += "<p style='color: red'>Pregunta " + (k + 1) + ": Incorrecta</p>";
+            }
+        }
+
+        // Mostrar resultados en la página
+        document.getElementById("resultados").innerHTML = resultadoHTML;
+    }
+</script>
+     
 <div class="mod-indent-outer w-100" id="yui_3_17_2_1_1696139426170_29"><div class="mod-indent"></div><div id="yui_3_17_2_1_1696139426170_28"><div class="contentwithoutlink " id="yui_3_17_2_1_1696139426170_27"><div class="no-overflow" id="yui_3_17_2_1_1696139426170_26"><div class="no-overflow" id="yui_3_17_2_1_1696139426170_25"><div style="background-color: #A20909; padding: 4px;" id="yui_3_17_2_1_1696139426170_24">
 <h2 style="color: #fff !important; font-size: 1.9em; margin-left: 50px; text-shadow: 2px 2px gray;" id="yui_3_17_2_1_1696139426170_40">Te sujerimos escuchar esta cancion mientras estas en la pagina&nbsp;</h2>
 </div></div></div></div></div></div>  
