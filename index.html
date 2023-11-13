@@ -1,34 +1,82 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Conversor Decimal a Binario</title>
+<head> 
+     <title> Proyecto 1 </title>
 </head>
-<body bgcolor="#95C9F1">
-    <h1>Conversor Decimal a Binario</h1>
-    <p>Ingresa un número decimal:</p>
-    <input type="number" id="decimalInput" placeholder="Ingrese un número decimal">
-    <button onclick="convertirDecimalABinario()">Convertir</button>
-    <p>Resultado en binario:</p>
-    <input type="text" id="resultadoBinario" readonly>
+<body bgcolor="#FFD0D0">
+     <div class="mod-indent-outer w-100" id="yui_3_17_2_1_1696139426170_29">
+         <div class="mod-indent"></div>
+         <div id="yui_3_17_2_1_1696139426170_28">
+             <div class="contentwithoutlink " id="yui_3_17_2_1_1696139426170_27">
+                 <div class="no-overflow" id="yui_3_17_2_1_1696139426170_26">
+                     <div class="no-overflow" id="yui_3_17_2_1_1696139426170_25">
+                         <div style="background-color: #A20909; padding: 4px;" id="yui_3_17_2_1_1696139426170_24">
+                             <h2 style="color: #fff !important; font-size: 1.9em; margin-left: 50px; text-shadow: 2px 2px gray;" id="yui_3_17_2_1_1696139426170_40">Bienvenidos a la calculadora de bases numéricas</h2>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+    
+     <h2 style="color: #000000 !important; font-size: 1.9em; margin-left: 50px; text-shadow: 2px 2px gray;">Ingresa un numero decimal (base 10):</h2>
+     <input type="number" style="height: 80px;" size="60" id="decimal" placeholder="Ingrese un número decimal">
+  
+     <button size="50" onclick="convertirDecimal()">Convertir</button>
 
-    <script>
-        function convertirDecimalABinario() {
-            var decimalInput = document.getElementById("decimalInput").value;
+     <h2 style="color: #000000 !important; font-size: 1.9em; margin-left: 50px; text-shadow: 2px 2px gray;">El numero en binario es (base 2):</h2>
+     <input type="text" style="height: 80px;" size="60" id="resultadoBinario" placeholder="El resultado en binario" readonly>
+
+     <h2 style="color: #000000 !important; font-size: 1.9em; margin-left: 50px; text-shadow: 2px 2px gray;">El numero en hexadecimal es (base 16):</h2>
+     <input type="text" style="height: 80px;" size="60" id="resultadoHexadecimal" placeholder="El resultado en hexadecimal" readonly>
+
+     <h2 style="color: #000000 !important; font-size: 1.9em; margin-left: 50px; text-shadow: 2px 2px gray;">El numero en octal es (base 8):</h2>
+     <input type="text" style="height: 80px;" size="60" id="resultadoOctal" placeholder="El resultado en octal" readonly>
+  
+     <script>
+        function convertirDecimal() {
+            var decimalInput = document.getElementById("decimal").value;
             var resultadoBinario = document.getElementById("resultadoBinario");
+            var resultadoHexadecimal = document.getElementById("resultadoHexadecimal");
+            var resultadoOctal = document.getElementById("resultadoOctal");
 
-            // Verificar si se ingresó un número válido
             if (!isNaN(decimalInput)) {
-                // Convertir el número decimal a binario
                 var binario = (decimalInput >>> 0).toString(2);
                 resultadoBinario.value = binario;
+
+                var hexadecimal = (decimalInput >>> 0).toString(16);
+                resultadoHexadecimal.value = hexadecimal.toUpperCase();
+
+                var octal = (decimalInput >>> 0).toString(8);
+                resultadoOctal.value = octal;
             } else {
                 resultadoBinario.value = "Ingrese un número válido.";
+                resultadoHexadecimal.value = "";
+                resultadoOctal.value = "";
             }
         }
     </script>
-<div class="mod-indent-outer w-100" id="yui_3_17_2_1_1696139426170_29"><div class="mod-indent"></div><div id="yui_3_17_2_1_1696139426170_28"><div class="contentwithoutlink " id="yui_3_17_2_1_1696139426170_27"><div class="no-overflow" id="yui_3_17_2_1_1696139426170_26"><div class="no-overflow" id="yui_3_17_2_1_1696139426170_25"><div style="background-color: #103c7d; padding: 4px;" id="yui_3_17_2_1_1696139426170_24"><img src="https://tecmartinezonline.com/img/reading.svg" style="float: left;" width="45px;">
-<h2 style="color: #fff !important; font-size: 1.9em; margin-left: 50px; text-shadow: 2px 2px gray;" id="yui_3_17_2_1_1696139426170_40">Presentación del Docente&nbsp;</h2>
+    <div class="mod-indent-outer w-100" id="yui_3_17_2_1_1696139426170_29"><div class="mod-indent"></div><div id="yui_3_17_2_1_1696139426170_28"><div class="contentwithoutlink " id="yui_3_17_2_1_1696139426170_27"><div class="no-overflow" id="yui_3_17_2_1_1696139426170_26"><div class="no-overflow" id="yui_3_17_2_1_1696139426170_25"><div style="background-color: #A20909; padding: 4px;" id="yui_3_17_2_1_1696139426170_24">
+<h2 style="color: #fff !important; font-size: 1.9em; margin-left: 50px; text-shadow: 2px 2px gray;" id="yui_3_17_2_1_1696139426170_40">¿Qué son los numero binarios?&nbsp;</h2>
 </div></div></div></div></div></div>
-    <h2 style="color: #fff !important; font-size: 1.9em; margin-left: 50px; text-shadow: 2px 2px gray;">Presentación del Docente&nbsp;</h2>
+<p><h3>El sistema binario es un sistema numérico que utiliza solo dos símbolos o dígitos para representar valores y realizar operaciones matemáticas. Estos dos símbolos son el "0" y el "1". Es la base fundamental de la informática y la electrónica digital, ya que los sistemas electrónicos digitales utilizan señales eléctricas que pueden estar en uno de dos estados: encendido (representado por "1") o apagado (representado por "0").</h3></p>
+
+<p><h3>En el sistema binario, los números se representan mediante combinaciones de estos dos dígitos. Cada posición en un número binario se llama "bit" (abreviatura de "dígito binario"), y cada bit puede tener uno de los dos valores posibles: 0 o 1.</h3></p>
+<a href="https://www.elvisualista.com/2016/10/20/que-son-los-numeros-binarios/">
+          para comprender mejor el tema te recomendamos dar click</a>
+     
+<div class="mod-indent-outer w-100" id="yui_3_17_2_1_1696139426170_29"><div class="mod-indent"></div><div id="yui_3_17_2_1_1696139426170_28"><div class="contentwithoutlink " id="yui_3_17_2_1_1696139426170_27"><div class="no-overflow" id="yui_3_17_2_1_1696139426170_26"><div class="no-overflow" id="yui_3_17_2_1_1696139426170_25"><div style="background-color: #A20909; padding: 4px;" id="yui_3_17_2_1_1696139426170_24">
+<h2 style="color: #fff !important; font-size: 1.9em; margin-left: 50px; text-shadow: 2px 2px gray;" id="yui_3_17_2_1_1696139426170_40">A continuacion te recomendamos unos videos para que comprendas la conversion a binarios&nbsp;</h2>
+</div></div></div></div></div></div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fGu0tM5u4b4?si=m7bWm8nh8r1-bFr7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3xGIXz2dza0?si=TJ5DXbPkbm8V_4yK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<div class="mod-indent-outer w-100" id="yui_3_17_2_1_1696139426170_29"><div class="mod-indent"></div><div id="yui_3_17_2_1_1696139426170_28"><div class="contentwithoutlink " id="yui_3_17_2_1_1696139426170_27"><div class="no-overflow" id="yui_3_17_2_1_1696139426170_26"><div class="no-overflow" id="yui_3_17_2_1_1696139426170_25"><div style="background-color: #A20909; padding: 4px;" id="yui_3_17_2_1_1696139426170_24">
+<h2 style="color: #fff !important; font-size: 1.9em; margin-left: 50px; text-shadow: 2px 2px gray;" id="yui_3_17_2_1_1696139426170_40">Te sujerimos escuchar esta cancion mientras estas en la pagina&nbsp;</h2>
+</div></div></div></div></div></div>  
+<p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1p4rYrxjVkj6v2eMzRhLfA?utm_source=generator" width="25%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>
+<p>©Todos los derechos reservados.</p>
+<img src="https://rinacional.tecnm.mx/retrieve/82b351c2-ad86-452b-9c69-f94e2ffbf39e" width="400" height="200"> <img src="https://play-lh.googleusercontent.com/cbKu6lgU1DPgFrOuf3R3OcVUQ7WkM5pycvf_mvcGZBf0bDwrpLK2G4g186g9e3KwSQ=w600-h300-pc0xffffff-pd" width="400" height="200">
 </body>
 </html>
+   
